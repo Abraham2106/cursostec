@@ -32,9 +32,11 @@ Uno de los principales retos del sistema radica en que los archivos fuente no co
 
 1. Describa cual podría ser el flujo de trabajo de su sistema, paso a paso como se comporta y que tipo de operaciones hace secuencialmente para lograr el objetivo. 
 
+## Patrones de diseño orientado a objetos 
+
 2. Se le van asignar 1 patrón de diseño, y otro lo escoje libremente de la lista anterior, y consulte al menos 3 aplicaciones posibles de cada patrón dentro del problema y el flujo que definió. Asegúrese que la aplicación del patrón incluya, una explicación de como podría usarse el patrón, la jerarquía de objetos o diseño sugerido.
 
-3. Luego de esto, seleccione cual flujo versus aplicación versus implementación de las generadas considera usted que es la más poderosa, aquella que genera más valor para el sistema, al suave ese patrón de esa forma y con esa implementación. Para valorar eso considere:
+3. Luego de esto, seleccione cual flujo versus aplicación versus implementación de las generadas considera usted que es la más poderosa, aquella que genera más valor para el sistema, al usar ese patrón de esa forma y con esa implementación. Para valorar eso considere:
 
 a. Si está logrando solucionar un problema complejo con un esquema simple.
 
@@ -43,3 +45,59 @@ b. Si el programa dado ese patrón se va a poder adaptar a cambios o imprevistos
 c. Si reduce sustancialmente el esfuerzo de desarrollo.
 
 d. Que dicha solución es capaz de usarse en otros escenarios dentro de la misma solución. 
+
+
+4. Ahora someta el patrón y las classes diseñadas a evaluación:
+
+Principles: 
+
+* Does any class gain more than one reason to change?
+* Does the pattern introduce logic that mixes concerns?
+* Can I extend behavior without modifying existing classes?
+* Does the pattern reduce conditionals?
+* Can subclasses fully replace base classes without breaking behavior?
+* Are interfaces too broad?
+* Are clients forced to depend on methods they don’t use?
+* Are high-level modules depending on abstractions?
+* Did the pattern introduce new concrete dependencies?
+
+Decoupling Test: 
+
+- Simule un escenario donde una class A importante cambia internamente, evalúe, cuales otras classes se ven afectadas? esto especialmente cuando se altera un método que es accesible o público. 
+
+You're looking for:
+* Reduced direct references
+* Fewer imports
+* Reduced knowledge of concrete implementations
+* Dependency on abstractions instead of concretions
+
+Scalability Simulation Test: 
+
+- Evalúe como cambian las clases y que se debe agregar si aparecen nuevos elementos de algo, 5, 10, 100, etc. 
+- Se busca que el crecimiento de classes se mantenga lineal y aislado
+
+
+Reusability Test: 
+
+- Cuáles de las clases se pueden usar en otro sistema o proceso con modificaciones mínimas?
+- Qué partes del diseño son independientes de frameworks o librerías 
+
+Anti-Pattern Detection Test:
+
+- Será posible resolver lo que hace este patrón de forma más simple?
+
+
+Mutation Test:
+
+- Seleccione una abstracción, y pregunte que parte del diseño se degrada?
+
+Si nada importante se degrada entonces el patrón está de adorno. 
+
+
+## Dependency Injection - architectural pattern
+
+
+## Authentication and Authorization mechanism - architectural pattern 
+
+password, MFA, Token, OAuth, Certificate, Biometric, role based, attribute based, ACL, Policy based
+
