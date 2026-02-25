@@ -32,6 +32,25 @@ Uno de los principales retos del sistema radica en que los archivos fuente no co
 
 1. Describa cual podría ser el flujo de trabajo de su sistema, paso a paso como se comporta y que tipo de operaciones hace secuencialmente para lograr el objetivo. 
 
+Suponga un algoritmo que resuelve este problema por puro conteo de palabras y comparaciones exhaustivas, sin usar ninguna AI, o vectores o algoritmos semánticos o de proximidad. 
+
+```
+1. Se cuenta con un archivo de sinónimos de sustantivos
+2. Se abre el archivo word plantilla y se recorre sección por sección del documento sacando sus sustantivos, en conjunto con sus sinónimos del diccionario. 
+3. Se cuentan la cantidad de apariciones de esos sinónimos por sección, contando los sinónimos como una ocurrencia, ordenando esos resultados de mayor a menor numero de ocurrencias por sección. 
+4. Se guarda en una estructura en memoria la lista de secciones con las palabras encontradas y sus respectivos conteos y el número de página donde está la sección.
+5. Ahora se recorre uno a uno los archivos fuentes de datos.
+6. Si el archivo es un excel, se recorre cada sheet del excel y se pasa a texto el contenido del rango más amplio de celdas existentes con información en el sheet, y se le pone el título a ese texto con el "nombre del archivo - nombre del sheet"
+7. Si es un documento de word se extrae el texto.
+8. Una vez con el texto sin importante si venía de word o excel se procede a sacar los sustantivos, en conjunto con sus sinónimos del diccionario. 
+9. Se cuentan la cantidad de apariciones de esos sinónimos de ese documento, contando los sinónimos como una ocurrencia. Ordenando de mayor a menor ocurrencias las palabras.
+10. Se procede ahora hacer un recorrido en la estructura de secciones de la planilla y para cada una de las palabras de la sección, y para todas las palabras del documento procesado, buscando encontrar coincidencias entre las palabras. Cuando hay una coincidencia se suman el total de apariciones y se guarda en la estructura de esa sección, una entrada que dice el texto que se leyó, y la cantidad de apariciones que hicieron match. 
+11. Al seguir este proceso por todos los documentos, cada sección tendrá los contenidos que debe usar.
+12. Se hace un recorrido por la estructura de secciones, se ordenan el ranking de las apariciones de documentos, se toman el top 3, y por medio de una AI se le pide que redacte la sección usando el contenido del top 3 como contexto. 
+13. Con dicha redacción, se procede a reemplazar la sección en el documento de word. 
+
+```
+
 ## Patrones de diseño orientado a objetos 
 
 2. Se le van asignar 1 patrón de diseño, y otro lo escoje libremente de la lista anterior, y consulte al menos 3 aplicaciones posibles de cada patrón dentro del problema y el flujo que definió. Asegúrese que la aplicación del patrón incluya, una explicación de como podría usarse el patrón, la jerarquía de objetos o diseño sugerido.
