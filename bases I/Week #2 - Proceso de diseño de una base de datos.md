@@ -211,4 +211,5 @@ Procedamos a hacer nuestro primer diseño relacional para un pequeño sistema.
 - Están las llaves foráneas debidamente definidas en cada tabla que lo requiera
 - Solicite ejemplos de la información que se almacenaría en cada tabla y observe si existe información que se duplicaría innecesariamente o bien que ahorraría espacio no repetirla, especialmente si se trata de texto 
 
+4. Aplique el script en postgreSQL usando pgAdmin y genere el diagrama de la base de datos. Realice lo mismo pero usando DBML database markup language y visualice el diagrama usando ya sea https://dbdiagram.io/home o https://chartdb.io/ 
 

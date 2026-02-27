@@ -115,6 +115,21 @@ Si nada importante se degrada entonces el patrón está de adorno.
 
 ## Dependency Injection - architectural pattern
 
+Dependency Injection (DI) es un patrón de diseño que consiste en proveer a una clase sus dependencias desde afuera, en lugar de que la clase las cree por sí misma. En otras palabras, una clase no debe construir lo que necesita; debe recibirlo.
+
+ejemplo https://github.com/vsurak/cursostec/tree/master/diseno/src/dependencyinjection 
+
+- Cómo aplicar dependency injection en frotend
+    - ReactJS
+    - Python con Flask o Django
+    - AngularJS
+    - En Asp.net
+
+- Cómo aplicar dependency injection en el backend
+    - En NodeJs + TypeScript
+    - En Asp.net + webservices
+    - En Python + FastApi o Django
+    - En Supabase
 
 ## Authentication and Authorization mechanism - architectural pattern 
 
